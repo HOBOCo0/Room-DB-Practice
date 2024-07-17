@@ -5,6 +5,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+/*
+here we have to create three things
+
+1. Entities
+2. Dao (data Access Object interface)
+3.  declaration of Database
+
+ */
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
