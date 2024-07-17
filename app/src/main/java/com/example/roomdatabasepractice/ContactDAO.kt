@@ -26,9 +26,9 @@ interface ContactDAO {
     @Delete
     suspend fun deleteContact(contact:Contact)
 
-    // for querry we will use live data, Behind the scene Rood checks if its return type is LiveData
+    // for query we will use live data, Behind the scene Rood checks if its return type is LiveData
     // then by default it is executed on background thread. here we don't have to manually declare
     // it to be a suspend function
     @Query("SELECT * FROM contact")
-    suspend fun getContact(): LiveData<List<Contact>>
+    fun getContact(): LiveData<List<Contact>>
 }

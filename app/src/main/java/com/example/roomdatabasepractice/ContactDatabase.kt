@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase
      2 - version is useful at the time of migration
     */
 // we have to make our database class abstract
-@Database(entities = [Contact::class], version = 0)
+@Database(entities = [Contact::class], version = 1)
 abstract class ContactDatabase: RoomDatabase() {
 
     // linking our DAO class to database
