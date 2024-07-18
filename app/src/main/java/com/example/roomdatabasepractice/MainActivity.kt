@@ -39,13 +39,15 @@ class MainActivity : AppCompatActivity() {
         // this is not a good practice to create a database in any application
         // we can create multiple instances like this which is wrong we should use the concept of singleton pattern.
         // it will return the database object
-        database = Room.databaseBuilder(applicationContext,ContactDatabase::class.java,"contactDB").build()
+       // database = Room.databaseBuilder(applicationContext,ContactDatabase::class.java,"contactDB").build()
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        database = ContactDatabase.getDatabase(this)
 
         GlobalScope.launch {
             database.contactDao().insertContact(Contact(0,"john",9999))
