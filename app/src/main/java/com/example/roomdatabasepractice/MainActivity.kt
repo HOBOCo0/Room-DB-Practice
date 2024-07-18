@@ -14,6 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import java.util.Date
 
 /*
 here we have to create three things
@@ -49,8 +50,10 @@ class MainActivity : AppCompatActivity() {
 
         database = ContactDatabase.getDatabase(this)
 
+        val database2 = ContactDatabase.getDatabase(this)
+
         GlobalScope.launch {
-            database.contactDao().insertContact(Contact(0,"john",9999))
+            database.contactDao().insertContact(Contact(0,"john",9999, 1))
         }
 
         database.contactDao().getContact().observe(this){
